@@ -46,9 +46,14 @@ body {
     justify-content: center;
 }
 
+[class*="__container"] {
+    max-width: 570px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
 .App {
     min-height: 450px;
-    max-width: 600px;
     background: #F9F7F7;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -158,3 +163,15 @@ body {
 .App-todo {
 
 }
+
+@media (max-width: 1087px) {
+
+}
+
+/* TABLET */
+@media (max-width: 991.98px) {
+
+}
+
+/* MOBILE */
+@media (max-width: 767.98px) {}
