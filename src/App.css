@@ -112,6 +112,8 @@ body {
 
 .App-todo {
     width: 100%;
+    max-height: 500px;
+    overflow-y: scroll;
 }
 
 .App-todo__list {
@@ -159,6 +161,9 @@ body {
 .item-app-todo__text {
     max-width: 400px;
     padding-left: 15px;
+}
+.check {
+    text-decoration: line-through;
 }
 .App-todo {
 
