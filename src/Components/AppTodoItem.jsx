@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
+import {svgs} from "../svg";
 
-const AppTodoItem = ({text}) => {
+const AppTodoItem = ({todo, remove}) => {
 
     const [isCheck, setIsCheck] = useState(true);
 
@@ -10,9 +11,12 @@ const AppTodoItem = ({text}) => {
                 <input onChange={() => setIsCheck(!isCheck)} type="checkbox" capture={isCheck} className="checkbox"/>
                 <span className="fake"></span>
                 <div className={isCheck ? "item-app-todo__text" : "item-app-todo__text check"}>
-                    {text}
+                    {todo.text}
                 </div>
             </label>
+            <div onClick={() => remove(todo)}>
+                {svgs.trash}
+            </div>
         </li>
     );
 };

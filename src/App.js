@@ -1,25 +1,24 @@
 import './App.css';
 import AppHeader from "./Components/AppHeader";
 import AppTodo from "./Components/AppTodo";
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 
 const App = () => {
 
-    useEffect(() => {
-        setTodos(JSON.parse(localStorage.getItem("Todos")))
-    }, [])
-
-    const [todos, setTodos] = useState([{
-        text: "asfsdfsdfsdfsdf"
-    }])
+    const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("Todos")) || [])
     localStorage.setItem('Todos', JSON.stringify(todos));
+
+    const removeTodo = (todo) => {
+        setTodos(todos.filter(p => p.id !== todo.id))
+    }
+
 
     return (
         <div className="App">
             <div className="App__container">
                 <AppHeader todos={todos} setTodos={setTodos}/>
                 <div className="separator"/>
-                <AppTodo todos={todos}/>
+                <AppTodo remove={removeTodo} todos={todos}/>
             </div>
         </div>);
 }

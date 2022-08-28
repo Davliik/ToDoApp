@@ -122,19 +122,23 @@ body {
 }
 
 .App-todo__item {
-    background: #DBE2EF;
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 .App-todo__item:not(:last-child) {
     margin-bottom: 30px;
 }
 .App-todo__item label{
+    background: #DBE2EF;
+    border-radius: 5px;
     padding: 5px 15px;
     width: 490px;
     min-height: 55px;
     display: flex;
     align-items: center;
     cursor: pointer;
+    margin-right: 10px;
 }
 
 .checkbox {
